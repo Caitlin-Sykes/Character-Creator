@@ -1,0 +1,261 @@
+{
+  "Baldur's Gate 3": {
+    "Classes": {
+      "Barbarian": {
+        "Primary Stat": "Strength",
+        "Secondary Stat": [
+          "Dexterity",
+          "Constitution",
+          "Intelligence",
+          "Wisdom",
+          "Charisma"
+        ],
+        "Subclasses": {
+          "Wildheart": ["Speak with Animals", "Beastial Heart"],
+          "Berserker": ["Frenzy", "Frenzied Strike", "Enraged Throw"],
+          "Wild Magic": ["Rage: Wild Magic", "Magic Awareness"]
+        },
+
+        "WeaponArmourProficiencies": [
+          "Light Armour",
+          "Medium Armour",
+          "Shields",
+          "Simple Weapons",
+          "Martial Weapons"
+        ],
+        "SkillProficiencies": [
+          "Athletics",
+          "Nature",
+          "Animal Handling",
+          "Perception",
+          "Survival",
+          "Intimidation"
+        ],
+
+        "NoOfProficiencies": "2",
+        "Class Features": ["Rage", "Unarmoured Defence"]
+      },
+
+      "Bard": {
+        "Primary Stat": "Charisma",
+        "Secondary Stat": [
+          "Dexterity",
+          "Constitution",
+          "Intelligence",
+          "Wisdom",
+          "Strength"
+        ],
+        "Subclasses": {
+          "Lore": [
+            "Arcana",
+            "Intimidation",
+            "Sleight of Hand",
+            "Cutting Words"
+          ],
+          "Valour": [
+            "Combat Inspiration",
+            "Martial Weapons",
+            "Medium Armour",
+            "Shields"
+          ],
+          "Sword": [
+            "Slashing Flourish (Melee)",
+            "Slashing Flourish (Ranged)",
+            "Defensive Flourish (Melee)",
+            "Defensive Flourish (Ranged)",
+            "Mobile Flourish (Melee)",
+            "Mobile Flourish (Ranged)",
+            "Scimitars",
+            "Medium Armour"
+          ]
+        },
+
+        "WeaponArmourProficiencies": [
+          "Simple Weapons",
+          "Hand Crossbows",
+          "Longswords",
+          "Rapiers",
+          "Shortswords",
+          "Light Armour"
+        ],
+        "SkillProficiencies": [
+          "Athletics",
+          "Acrobatics",
+          "Sleight of Hand",
+          "Stealth",
+          "Arcana",
+          "History",
+          "Investigation",
+          "Nature",
+          "Religion",
+          "Animal Handling",
+          "Insight",
+          "Medicine",
+          "Perception",
+          "Deception",
+          "Intimidation",
+          "Performance",
+          "Persuasion"
+        ],
+
+        "NoOfProficiencies": "3",
+
+        "Class Features": ["Bardic Inspiration"],
+        "Cantrips": [
+          "Vicious Mockery",
+          "Blade Ward",
+          "Mage Hand",
+          "True Strike",
+          "Friends",
+          "Dancing Lights",
+          "Light",
+          "Minor Illusion"
+        ],
+        "NoOfCantrips": "2",
+        "Spells": [
+          "Animal Friendship",
+          "Bane",
+          "Charm Person",
+          "Enemies",
+          "Cure Wounds",
+          "Disguise Self",
+          "Dissonant Whispers",
+          "Faerie Fire",
+          "Feather Fall",
+          "Healing Word",
+          "Heroism",
+          "Longstrider",
+          "Sleep",
+          "Speak with Animals",
+          "Tasha’s Hideous Laughter",
+          "Thunderwave"
+        ],
+        "NoOfSpells": "4",
+        "Instrument": ["Hand Drum", "Flute", "Lute", "Lyre", "Violin"]
+      },
+
+      "Cleric": {
+        "Primary Stat": "Wisdom",
+        "Secondary Stat": [
+          "Dexterity",
+          "Constitution",
+          "Intelligence",
+          "Charisma",
+          "Strength"
+        ],
+        "Subclasses": {
+          "Life": ["Heavy Armour", "Disciple of Life", "Cure Wounds", "Bless"],
+          "Light": ["Warding Flare", "Light", "Burning Hands", "Faerie Fire"],
+          "Trickery": [
+            "Blessing of the Trickster",
+            "Charm Person",
+            "Disguise Self"
+          ],
+          "Knowledge": ["Command", "Sleep"],
+          "Nature": [
+            "Heavy Armour",
+            "Acolyte of Nature",
+            "Speak with Animals",
+            "Animal Friendship"
+          ],
+          "Tempest": [
+            "Marital Weapons",
+            "Heavy Armour",
+            "Wrath of the Storm",
+            "Thunderwave",
+            "Fog Cloud"
+          ],
+          "War": [
+            "Marital Weapons",
+            "Heavy Armour",
+            "War Priest",
+            "Divine Favour",
+            "Shield of Faith"
+          ]
+        },
+
+        "WeaponArmourProficiencies": [
+          "Simple Weapons",
+          "Morningstars",
+          "Light Armour",
+          "Medium Armour",
+          "Shields"
+        ],
+        "SkillProficiencies": [
+          "History",
+          "Religion",
+          "Insight",
+          "Medicine",
+          "Persuasion"
+        ],
+
+        "NoOfProficiencies": "2",
+
+        "Class Features": ["Domain Spells", "Unarmoured Defence"],
+        "Cantrips": [
+          "Thaumaturgy",
+          "Sacred Flame",
+          "Guidance",
+          "Resistance",
+          "Light",
+          "Blade Ward",
+          "Produce Flame"
+        ],
+        "NoOfCantrips": "3",
+        "Spells": [
+          "Shield of Faith",
+          "Protection from Evil and Good",
+          "Bane",
+          "Command",
+          "Bless",
+          "Cure Wounds",
+          "Healing Word",
+          "Guiding Bolt",
+          "Inflict Wounds",
+          "Create or Destroy Water"
+        ],
+        "NoOfSpells": "4",
+        "Deity": [
+          "Selûne",
+          "Helm",
+          "Kelemvor",
+          "Yondalla",
+          "Eilistraee",
+          "Mielikki",
+          "Ilmater",
+          "Moradin",
+          "Tiamat",
+          "Lathander",
+          "Laduguer",
+          "Tempus",
+          "Mystra",
+          "Corellon Larethian",
+          "Bahamut",
+          "Talos",
+          "Tyr",
+          "Oghma",
+          "Garl Glittergold",
+          "Gruumsh",
+          "Tymora",
+          "Lolth",
+          "Vlaakith"
+        ]
+      }
+    },
+
+    "Sex":["Male", "Female", "Other"],
+    "Species": ["Human","Elf","Drow","Half-Elf","Half-Orc","Halfling","Dwarf","Gnome","Tiefling","Githyanki","Dragonborn"],
+  }
+  // { "Druid": "Circle of the Land, Circle of the Moon, Circle of Spores" },
+  // { "Fighter": "Battle Master, Eldritch Knight, Champion" },
+  // { "Monk": "Way of the Four Elements, Way of the Open Hand, Way of the Shadow" },
+  // { "Paladin": "Oath of the Ancients, Oath of Devotion, Oath of Vengeance" },
+  // { "Ranger": "" },
+  // { "Rogue": "" },
+  // { "Sorcerer": ""},
+  // { "Warlock": "" },
+  // { "Wizard": "" }
+
+  
+  //"Background":
+}

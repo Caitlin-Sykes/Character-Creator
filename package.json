@@ -1,0 +1,14 @@
+{
+  "name": "character-creator",
+  "version": "1.0.0",
+  "description": "A character creator using Electron, Python, Html, Tailwind, and maybe some other things",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cait",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.1.0"
+  }
+}
