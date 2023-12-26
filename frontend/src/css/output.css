@@ -511,7 +511,7 @@ html {
   --b2: 0.193144 0.037037 265.754874;
   --b3: 0.178606 0.034249 265.754874;
   --bc: 0.841536 0.007965 265.754874;
-  --pc: 0.157793 0.05055 143.407469;
+  --pc: 0.851329 0.007312 263.610427;
   --sc: 0.908625 0.018542 194.768948;
   --ac: 0.144721 0.035244 350.048739;
   --nc: 0.855899 0.00737 260.030984;
@@ -527,7 +527,7 @@ html {
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --p: 0.788966 0.252752 143.407469;
+  --p: 0.256643 0.03656 263.610427;
   --s: 0.543123 0.09271 194.768948;
   --a: 0.723603 0.176218 350.048739;
   --n: 0.279495 0.036848 260.030984;
@@ -8361,12 +8361,12 @@ details.collapse summary::-webkit-details-marker {
   display: none;
 }
 
-.h-5 {
-  height: 1.25rem;
+.min-h-full {
+  min-height: 100%;
 }
 
-.w-5 {
-  width: 1.25rem;
+.w-80 {
+  width: 20rem;
 }
 
 .w-\[this-is\\\\\] {
@@ -8379,14 +8379,6 @@ details.collapse summary::-webkit-details-marker {
 
 .w-\[weird-and-invalid\] {
   width: weird-and-invalid;
-}
-
-.flex-1 {
-  flex: 1 1 0%;
-}
-
-.flex-none {
-  flex: none;
 }
 
 .flex-shrink {
@@ -9356,6 +9348,11 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-base-200 {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
@@ -9446,10 +9443,6 @@ details.collapse summary::-webkit-details-marker {
   background-origin: content-box;
 }
 
-.stroke-current {
-  stroke: currentColor;
-}
-
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -9473,6 +9466,10 @@ details.collapse summary::-webkit-details-marker {
 .object-scale-down {
   -o-object-fit: scale-down;
      object-fit: scale-down;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .text-left {
@@ -9615,6 +9612,11 @@ details.collapse summary::-webkit-details-marker {
 
 .text-\[\#336699\]\/\[\.35\] {
   color: rgb(51 102 153 / .35);
+}
+
+.text-base-content {
+  --tw-text-opacity: 1;
+  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
 }
 
 .text-blue-500 {
@@ -9945,6 +9947,22 @@ details.collapse summary::-webkit-details-marker {
 
 .forced-color-adjust-none {
   forced-color-adjust: none;
+}
+
+.shadowNav {
+  position: relative;
+}
+
+.shadowNav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
+  /* Adjust the height as needed */
+  box-shadow: 0rem 0rem 1rem 0rem rgba(102, 32, 180, 1);
+  background: linear-gradient(to bottom, rgba(102, 32, 180, 1) 0%, rgba(102, 32, 180, 0) 100%);
 }
 
 @media (hover:hover) {
