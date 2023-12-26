@@ -10,7 +10,16 @@
   "author": "Cait",
   "license": "MIT",
   "devDependencies": {
+    "daisyui": "^4.4.24",
     "electron": "^28.1.0",
     "tailwindcss": "^3.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caitlin-Sykes/Character-Creator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Caitlin-Sykes/Character-Creator/issues"
+  },
+  "homepage": "https://github.com/Caitlin-Sykes/Character-Creator#readme"
 }
