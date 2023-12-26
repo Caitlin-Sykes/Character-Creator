@@ -4,7 +4,10 @@ module.exports = {
   content: ["./**/*.{html,js,ts}"],
 
   theme: {
-    extend: {},
+    colors: { 
+      "pale_blue": "#546fff",
+    }
+
   },
 
   //Plugins
@@ -18,10 +21,9 @@ module.exports = {
         night: {
           ...require("daisyui/src/theming/themes")["night"],
           primary: "#1a2335",
-          secondary: "teal",
+          secondary: "#20325f",
+          accent: "#2a4076",
         }
-        //"#6620b4"
-
       },
 
     ], // false: only light + dark | true: all | array - specific themes

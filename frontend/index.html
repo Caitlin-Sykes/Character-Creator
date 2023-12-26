@@ -26,7 +26,7 @@
 
   <body>
     <!--Begin Navbar-->
-    <div class="navbar bg-primary content-evenly shadowNav">
+    <div class="navbar bg-primary content-evenly shadowNav mb-10">
       <!-- Left menu button & menu -->
       <div class="drawer navbar-start">
         <input id="my-drawer" type="checkbox" class="drawer-toggle" />
@@ -57,11 +57,25 @@
     </div>
     <!--End Navbar-->
 
-    <div class="">
-        <h1 class="text-3xl font-bold underline blue">
-      Hello from Electron renderer!
+    <div>
+      <div class="tabs">
+        <ul class="flex space-x-4">
+          <li class="btn btn-wide btn-accent">Settings</li>
+          <li class="btn btn-wide btn-accent">Result</li>
+          <li class="btn btn-wide btn-accent">Game Select</li>
+        </ul>
+      </div>
+
+      <div class="main bg-secondary grid grid-cols-6 py-12 px-12">
+        <div class="bg-pale_blue col-start-1 col-end-2">
+           <div id="game_image"></div>
+        </div>
+        <div class="bg-pale_blue col-start-3 col-end-7">
+         <p>hehe</p>
+        </div>
+        
+      </div>
     </h1>
     </div>
   </body>
-  <script src="./src/js/renderer.js"></script>
 </html>
