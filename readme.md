@@ -5,6 +5,7 @@ Currently Supports
 
 Uses the technologies:
     - Python
+    - Python Shell
     - Electron
     - HTML/CSS/JS
     - Tailwind

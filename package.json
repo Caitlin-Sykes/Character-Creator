@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/Caitlin-Sykes/Character-Creator/issues"
   },
-  "homepage": "https://github.com/Caitlin-Sykes/Character-Creator#readme"
+  "homepage": "https://github.com/Caitlin-Sykes/Character-Creator#readme",
+  "dependencies": {
+    "python-shell": "^5.0.0"
+  }
 }

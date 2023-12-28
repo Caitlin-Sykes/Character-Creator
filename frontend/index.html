@@ -60,22 +60,24 @@
     <div>
       <div class="tabs">
         <ul class="flex space-x-4">
+          <li id="game_tab" class="btn btn-wide btn-accent">Game Select</li>
           <li class="btn btn-wide btn-accent">Settings</li>
           <li class="btn btn-wide btn-accent">Result</li>
-          <li class="btn btn-wide btn-accent">Game Select</li>
         </ul>
       </div>
 
-      <div class="main bg-secondary grid grid-cols-6 py-12 px-12">
+      <div class="main bg-secondary grid grid-cols-6 py-12 px-12 rounded-md">
         <div class="bg-pale_blue col-start-1 col-end-2">
            <div id="game_image"></div>
         </div>
-        <div class="bg-pale_blue col-start-3 col-end-7">
+        <div id = "container_info" class="bg-pale_blue col-start-3 col-end-7 rounded-md">
          <p>hehe</p>
         </div>
         
       </div>
     </h1>
     </div>
+
+    <script src="./src/js/gametab.js"></script> <!--Imports the gametab click-->
   </body>
 </html>

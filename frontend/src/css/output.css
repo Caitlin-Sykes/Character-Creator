@@ -8230,10 +8230,6 @@ details.collapse summary::-webkit-details-marker {
   grid-column-end: 7;
 }
 
-.col-end-3 {
-  grid-column-end: 3;
-}
-
 .float-start {
   float: inline-start;
 }
@@ -8927,10 +8923,6 @@ details.collapse summary::-webkit-details-marker {
   justify-items: stretch;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -9255,6 +9247,10 @@ details.collapse summary::-webkit-details-marker {
 
 .rounded-box {
   border-radius: var(--rounded-box, 1rem);
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
 }
 
 .rounded-b {
