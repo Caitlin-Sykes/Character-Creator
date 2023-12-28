@@ -1,4 +1,5 @@
 import json
+import sys
 
 # Gets the json file
 def get_json():
@@ -9,3 +10,7 @@ def get_json():
 def get_games_from_json():
     game_data = get_json() #gets json file as game_data
     return (list(game_data.keys())) #returns the games in the json file
+
+
+print("testing")
+sys.stdout.flush()
