@@ -31,20 +31,3 @@ module.exports = {
     themeRoot: "*", // The element that receives theme color CSS variables
   },
 }
-
-
-
-// { "Druid": "Circle of the Land, Circle of the Moon, Circle of Spores" },
-  // { "Fighter": "Battle Master, Eldritch Knight, Champion" },
-  // { "Monk": "Way of the Four Elements, Way of the Open Hand, Way of the Shadow" },
-  // { "Paladin": "Oath of the Ancients, Oath of Devotion, Oath of Vengeance" },
-  // { "Ranger": "" },
-  // { "Rogue": "" },
-  // { "Sorcerer": ""},
-  // { "Warlock": "" },
-  // { "Wizard": "" }
-
-  
-  //"Background":
-
-  //from json

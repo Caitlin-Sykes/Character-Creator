@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="night">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- <meta
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
@@ -11,75 +12,77 @@
       content="default-src 'self'; script-src 'self'"
     /> -->
 
-    <link href=".\src\css\output.css" rel="stylesheet" />
+  <link href=".\src\css\output.css" rel="stylesheet" />
 
-    <!--Couldn't get node to work, BUG: remove this line if i can fix my node install -->
+  <!--Couldn't get node to work, BUG: remove this line if i can fix my node install -->
+  <!-- material icons-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
-    <!-- material icons-->
+  <title>Character Creator</title>
+</head>
 
-    <title>Character Creator</title>
-  </head>
-
-  <body>
-    <!--Begin Navbar-->
-    <div class="navbar bg-primary content-evenly shadowNav mb-10">
-      <!-- Left menu button & menu -->
-      <div class="drawer navbar-start">
-        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content content-evenly">
-          <!-- Page content here -->
-          <label for="my-drawer" class="btn btn-square btn-ghost drawer-button"
-            ><span class="material-symbols-outlined"> menu </span></label
-          >
-        </div>
-        <div class="drawer-side">
-          <label
-            for="my-drawer"
-            aria-label="close sidebar"
-            class="drawer-overlay"
-          ></label>
-          <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-            <!-- Sidebar content here -->
-            <li><a>Sidebar e 1</a></li>
-            <li><a>e Item 2</a></li>
-          </ul>
-        </div>
+<body>
+  <!--Begin Navbar-->
+  <div class="navbar bg-primary content-evenly shadowNav mb-10">
+    <!-- Left menu button & menu -->
+    <div class="drawer navbar-start">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content content-evenly">
+        <!-- Page content here -->
+        <label for="my-drawer" class="btn btn-square btn-ghost drawer-button"><span class="material-symbols-outlined">
+            menu </span></label>
       </div>
-
-      <!-- Nav Title -->
-      <div class="navbar-end">
-        <a class="btn btn-ghost text-xl">Charactor Generator</a>
-      </div>
-    </div>
-    <!--End Navbar-->
-
-    <div>
-      <div class="tabs">
-        <ul class="flex space-x-4">
-          <li id="game_tab" class="btn btn-wide btn-accent">Game Select</li>
-          <li class="btn btn-wide btn-accent">Settings</li>
-          <li class="btn btn-wide btn-accent">Result</li>
+      <div class="drawer-side">
+        <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+          <!-- Sidebar content here -->
+          <li><a>Sidebar e 1</a></li>
+          <li><a>e Item 2</a></li>
         </ul>
       </div>
-
-      <div class="main bg-secondary grid grid-cols-6 py-12 px-12 rounded-md">
-        <div class="bg-pale_blue col-start-1 col-end-2">
-           <div id="game_image"></div>
-        </div>
-        <div id = "container_info" class="bg-pale_blue col-start-3 col-end-7 rounded-md">
-         <p>hehe</p>
-        </div>
-        
-      </div>
-    </h1>
     </div>
 
-    <script src="./src/js/renderer.js"></script> <!--Imports the renderer click-->
-    <script src="./src/js/gametab.js"></script> <!--Imports the renderer click-->
+    <!-- Nav Title -->
+    <div class="navbar-end">
+      <a class="btn btn-ghost text-xl">Charactor Generator</a>
+    </div>
+  </div>
+  <!--End Navbar-->
 
-  </body>
+  <div>
+    <div role="tablist" class="tabs tabs-bordered tabs-lg">
+      <input type="radio" name="Game_Settings" role="tab" class="tab bg-info" aria-label="Game Settings" checked />
+      <input type="radio" name="my_tabs_2" role="tab" class="tab bg-info" aria-label="Tab 2" />
+      <input type="radio" name="my_tabs_3" role="tab" class="tab bg-info" aria-label="Tab 3" />
+    </div>
+
+    <div class="flex bg-secondary">
+      <!--Left Column-->
+      <div class="w-1/2 flex-initial card bg-base-300 rounded-box place-items-center">
+        <div role="tabpanel" class="tab-content p-10 flex w-full">
+          <select id="container_game_dropdown" class="select select-secondary"></select>
+        </div>
+      </div>
+      <!--Divider-->
+      <div class="divider divider-horizontal divider-accent"></div>
+      <!--Right Column-->
+      <div class="w-1/2 flex-initial card bg-base-300 rounded-box place-items-center">
+        content
+      </div>
+    </div>
+
+
+    <div role="tabpanel" class="tab-content p-10">Tab content 2</div>
+
+
+    <div role="tabpanel" class="tab-content p-10">Tab content 3</div>
+  </div>
+
+  <script src="./src/js/renderer.js"></script>
+  <!--Imports the renderer click-->
+  <script src="./src/js/gametab.js"></script>
+  <!--Imports the renderer click-->
+</body>
+
 </html>
