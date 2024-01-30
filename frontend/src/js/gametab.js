@@ -3,6 +3,7 @@ const game_container = document.getElementById('container_info');
 
 //Sets up the game selection
 async function setUpGameSelect() {
+
     //Gets the game dropdown box & fetches data from the end point
     let dropdown = document.getElementById('container_game_dropdown');
     let game_data = await fetchData("http://127.0.0.1:5000/supported_games");
