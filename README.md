@@ -1,9 +1,11 @@
 # A readme. 
+
 Hi. This will be better later. In fact, there's a better version on the other branch. This is just temporary.
------
+
 If you are seeing this, i am surprised you are actually playing along. there's no awards or anything. its not even that hard.
 I'm just bored. and procrastinating. 
------
+
+## Here:
 49 20 61 6D 20 62 6F 72 65 64 20 73 6F 20 68 65 72 65 20 69 73 20 61 20 70 75 7A 7A 6C 65 3A 20 31 32 31 20 31 31 31 20 
 31 31 37 20 31 37 30 20 31 31 31 20 31 30 38 20 31 31 38 20 31 30 31 20 31 30 30 20 33 32 20 31 30 34 20 39 37 20 31 31 
 38 20 31 30 31 20 33 32 20 31 30 35 20 31 31 36 20 34 36 20 33 32 20 31 30 34 20 39 37 20 31 31 38 20 31 30 31 20 33 32 
