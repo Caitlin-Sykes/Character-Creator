@@ -5,8 +5,10 @@ Currently Supports
 
 Uses the technologies:
     - Python
-    - Python Shell
+    - Flask
     - Electron
-    - HTML/CSS/JS
+    - HTML/CSS/JS (Maybe Typescript instead, will see)
     - Tailwind
     - DaisyUI for Tailwind
+    - NodeJS
+    
