@@ -1,4 +1,5 @@
-A readme. Hi. This will be better later. In fact, there's a better version on the other branch. This is just temporary.
+# A readme. 
+Hi. This will be better later. In fact, there's a better version on the other branch. This is just temporary.
 -----
 If you are seeing this, i am surprised you are actually playing along. there's no awards or anything. its not even that hard.
 I'm just bored. and procrastinating. 
