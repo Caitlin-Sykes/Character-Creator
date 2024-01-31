@@ -24,6 +24,6 @@ Nothing because I haven't built it yet
 # To run:
     - In the "Backend" folder, run "pip install -r requirements.txt"
     - In the root directory, run "npm install"
-    - Run " npm run start" in the root directory
+    - Run "npm run start" in the root directory
 
     
