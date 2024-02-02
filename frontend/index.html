@@ -52,68 +52,21 @@
 
   <!-- Main content stuff -->
   <div>
-    <!-- Beginning of the Tabs Stuff -->
-    <div role="tablist" class="tabs tabs-bordered tabs-lg bg-secondary">
-      <input onclick='swapTab("Game_Settings")' type="radio" name="Game_Settings" role="tab" class="tab checked" aria-label="Game Settings" />
-      <input onclick='swapTab("Tab_2")' type="radio" name="Tab_2" role="tab" class="tab" aria-label="Tab 2" />
-      <input onclick='swapTab("Tab_3")' type="radio" name="Tab_3" role="tab" class="tab" aria-label="Tab 3" />
-    </div>
-
-      <!-- Game Settings Tab Stuff -->
-      <div id = "Game_Settings" role="tabpanel" class="bg-secondary flex items-center justify-center h-screen tab-content p-10 flex">
-          <!--Left Column-->
-          <div class="rounded-box place-items-center">
-              <select id="container_game_dropdown" class="select select-secondary"></select>
-              <p>other stuff here. banana idfk why flexbox isnt working</p>
-          </div>
-
-          <!--Divider-->
-          <div class="divider divider-horizontal divider-accent"></div>
-          
-          <!--Right Column-->
-          <div class="rounded-box place-items-center">
-            idk Cait likes cake.
-          </div>
       
-      </div>
-      <!--End of Game Settings Tab Stuff-->
-
-      <!-- Tab 2 Tab Stuff -->
-      <div id = "Tab_2" role="tabpanel" class="bg-secondary flex items-center justify-center h-screen tab-content p-10 flex invisible">
-          <!--Left Column-->
-          <div class="rounded-box place-items-center">
-              <p>._.</p>
+      <!-- Open the modal using ID.showModal() method -->
+      <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+      <dialog id="my_modal_1" class="modal bg-dark-blue">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">Hello!</h3>
+          <p class="py-4">Press ESC key or click the button below to close</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
           </div>
-
-          <!--Divider-->
-          <div class="divider divider-horizontal divider-accent"></div>
-          
-          <!--Right Column-->
-          <div class="rounded-box place-items-center">
-            idk i struggle with js
-          </div>
-      
-      </div>
-      <!--End of Tab 2 Tab Stuff-->
-
-      <!-- Tab 3 Tab Stuff -->
-      <div id = "Tab_3" role="tabpanel" class="bg-secondary flex items-center justify-center h-screen tab-content p-10 flex invisible">
-          <!--Left Column-->
-          <div class="rounded-box place-items-center">
-              <p>OwO</p>
-          </div>
-
-          <!--Divider-->
-          <div class="divider divider-horizontal divider-accent"></div>
-          
-          <!--Right Column-->
-          <div class="rounded-box place-items-center">
-            -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
-          </div>
-      
-      </div>
-      <!--End of Tab 3 Tab Stuff-->
-
+        </div>
+      </dialog>
   
 
   
@@ -122,7 +75,7 @@
 
 
   <script src="./src/js/gametab.js"></script>
-  <script src="./src/js/html_tabs_switcher.js"></script>
+  <!-- <script src="./src/js/html_tabs_switcher.js"></script> -->
   <!--Imports the gametab javascript click-->
 </body>
 
