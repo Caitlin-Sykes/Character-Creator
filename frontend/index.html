@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <!-- TODO: this breaks stuff vvv need to make it not break stuff -->
   <!-- <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
@@ -14,7 +15,6 @@
 
   <link href=".\src\css\output.css" rel="stylesheet" />
 
-  <!--Couldn't get node to work, BUG: remove this line if i can fix my node install -->
   <!-- material icons-->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -33,6 +33,7 @@
         <label for="my-drawer" class="btn btn-square btn-ghost drawer-button"><span class="material-symbols-outlined">
             menu </span></label>
       </div>
+      <!-- BUG: drawer be glitchy -->
       <div class="drawer-side">
         <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
@@ -53,6 +54,7 @@
   <!-- Main content stuff -->
   <div>
       
+      <!-- Modal does work. custom colours do not -->
       <!-- Open the modal using ID.showModal() method -->
       <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
       <dialog id="my_modal_1" class="modal bg-dark-blue">
