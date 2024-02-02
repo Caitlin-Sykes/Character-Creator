@@ -1,16 +1,28 @@
 from flask import Flask #imports flask
-import json_parser as jp
+# from flask_cors import CORS #imports cross origin request
+import generation as gen
 
 main = Flask(__name__) #main flask instance
 
-@main.route('/supported_games')
-def getSupportedGames():
-    print(jp.get_games_from_json())
-    return jp.get_games_from_json()
-    
-    
-    
+# CORS(main)
+
+
+@main.route('/')
+def landing_page():
+    return "hello this is the main page. nice to meet you."
+
+# Gets all specific games
+# TODO: change this to be a request/make more secure
+@main.route('/supported_games',  methods=['GET'])
+def get_supported_games():
+    return gen.get_games_from_json()
+
+#Gets the data for the specific game that is in the drop down
+@main.route('/specific_games',  methods=['GET'])
+def get_specific_games():
+    return gen.generate_random_race()
+
 #Run flask    
 if __name__ == '__main__':
-    main.run()
+    main.run(debug=True, port=8028)
 

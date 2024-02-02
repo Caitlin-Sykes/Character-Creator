@@ -1,16 +1,19 @@
 import json
-import sys
+class json_parser:
+    def __init__(self):
+        self.game_data = self.get_json()
 
-# Gets the json file
-def get_json():
-    with open('.\\assets\\games_info.json', 'r') as file:
-        return json.load(file)
+    # Gets the json file and stores it in g
+    def get_json(self):
+        with open('..\\assets\\games_info.json', 'r') as file:
+            game_data = json.load(file)
 
-# A function to get all the supported games from the json
-def get_games_from_json():
-    game_data = get_json() #gets json file as game_data
-    return (list(game_data.keys())) #returns the games in the json file
+            if not isinstance(game_data, dict):
+                game_data = {}
+            return game_data
 
+# Instance of json parser
+jp_inst = json_parser()
 
-print("testing")
-sys.stdout.flush()
+# Access the game_data attribute through the instance
+# games_info = jp_instance.game_data
