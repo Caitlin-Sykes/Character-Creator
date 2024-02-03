@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -16,7 +16,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: currentColor;
+  border-color: #e5e7eb;
   /* 2 */
 }
 
@@ -506,7 +506,7 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-* {
+:root {
   color-scheme: dark;
   --b2: 0.193144 0.037037 265.754874;
   --b3: 0.178606 0.034249 265.754874;
@@ -537,6 +537,7 @@ html {
   --su: 0.78452 0.132529 181.911977;
   --wa: 0.832428 0.139558 82.95003;
   --er: 0.717858 0.170255 13.11834;
+  --darkblue: #0e172c;
 }
 
 *, ::before, ::after {
@@ -3206,6 +3207,10 @@ input.tab:checked + .tab-content,
   .btn-error {
     --btn-color: var(--fallback-er);
   }
+
+  .prose :where(code):not(:where([class~="not-prose"] *, pre *)) {
+    background-color: var(--fallback-b3,oklch(var(--b3)/1));
+  }
 }
 
 @supports (color: color-mix(in oklab, black, black)) {
@@ -3889,7 +3894,7 @@ details.collapse summary::-webkit-details-marker {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   transition-duration: 150ms;
   transition-duration: 0.2s;
-  top: 50%;
+  top: 1.9rem;
   inset-inline-end: 1.4rem;
   content: "";
   transform-origin: 75% 75%;
@@ -5505,6 +5510,7 @@ details.collapse summary::-webkit-details-marker {
   border-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-border-opacity)));
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
+  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
   --tw-text-opacity: 0.2;
 }
 
@@ -6317,8 +6323,8 @@ details.collapse summary::-webkit-details-marker {
 .prose :where(code):not(:where([class~="not-prose"] *, pre *)) {
   padding: 1px 8px;
   border-radius: var(--rounded-badge);
-  background-color: var(--fallback-bc,oklch(var(--bc)/0.1));
   font-weight: initial;
+  background-color: var(--fallback-bc,oklch(var(--bc)/0.1));
 }
 
 .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::before, .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::after {
@@ -8214,22 +8220,6 @@ details.collapse summary::-webkit-details-marker {
   isolation: auto;
 }
 
-.col-start-1 {
-  grid-column-start: 1;
-}
-
-.col-start-3 {
-  grid-column-start: 3;
-}
-
-.col-end-2 {
-  grid-column-end: 2;
-}
-
-.col-end-7 {
-  grid-column-end: 7;
-}
-
 .float-start {
   float: inline-start;
 }
@@ -8735,10 +8725,6 @@ details.collapse summary::-webkit-details-marker {
   grid-auto-flow: column dense;
 }
 
-.grid-cols-6 {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-}
-
 .flex-row {
   flex-direction: row;
 }
@@ -8927,12 +8913,6 @@ details.collapse summary::-webkit-details-marker {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-y-reverse > :not([hidden]) ~ :not([hidden]) {
@@ -9249,10 +9229,6 @@ details.collapse summary::-webkit-details-marker {
   border-radius: var(--rounded-box, 1rem);
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -9387,19 +9363,9 @@ details.collapse summary::-webkit-details-marker {
   background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
 }
 
-.bg-pale_blue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(84 111 255 / var(--tw-bg-opacity));
-}
-
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
-}
-
-.bg-secondary {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-s,oklch(var(--s)/var(--tw-bg-opacity)));
 }
 
 .decoration-slice {
@@ -9512,18 +9478,12 @@ details.collapse summary::-webkit-details-marker {
      object-fit: scale-down;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-4 {
   padding: 1rem;
-}
-
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
 .text-left {
@@ -9666,6 +9626,11 @@ details.collapse summary::-webkit-details-marker {
 .text-base-content {
   --tw-text-opacity: 1;
   color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -10016,13 +9981,24 @@ details.collapse summary::-webkit-details-marker {
 
 /* ---------------------------------------------------------------- */
 
-/*                             Images                              */
+/*                             Images                               */
 
 /* ---------------------------------------------------------------- */
 
 #game_image {
   width: 200px;
   height: 200px;
+}
+
+/* ---------------------------------------------------------------- */
+
+/*                             Test                                 */
+
+/* ---------------------------------------------------------------- */
+
+.red {
+  background-color: red !important;
+  box-shadow: 0rem 0rem 1rem 0rem rgb(110, 3, 3) !important;
 }
 
 @media (hover:hover) {

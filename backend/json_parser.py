@@ -5,7 +5,7 @@ class json_parser:
 
     # Gets the json file and stores it in g
     def get_json(self):
-        with open('..\\assets\\games_info.json', 'r') as file:
+        with open('.\\assets\\games_info.json', 'r') as file:
             game_data = json.load(file)
 
             if not isinstance(game_data, dict):
@@ -14,6 +14,3 @@ class json_parser:
 
 # Instance of json parser
 jp_inst = json_parser()
-
-# Access the game_data attribute through the instance
-# games_info = jp_instance.game_data
