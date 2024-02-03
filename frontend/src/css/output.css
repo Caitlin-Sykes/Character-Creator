@@ -537,7 +537,7 @@ html {
   --su: 0.78452 0.132529 181.911977;
   --wa: 0.832428 0.139558 82.95003;
   --er: 0.717858 0.170255 13.11834;
-  darkblue: #0e172c;
+  --darkblue: #0e172c;
 }
 
 *, ::before, ::after {
@@ -9478,13 +9478,12 @@ details.collapse summary::-webkit-details-marker {
      object-fit: scale-down;
 }
 
-.p-4 {
-  padding: 1rem;
+.p-10 {
+  padding: 2.5rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.p-4 {
+  padding: 1rem;
 }
 
 .text-left {
@@ -9541,11 +9540,6 @@ details.collapse summary::-webkit-details-marker {
 
 .align-super {
   vertical-align: super;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-xl {
@@ -9987,13 +9981,24 @@ details.collapse summary::-webkit-details-marker {
 
 /* ---------------------------------------------------------------- */
 
-/*                             Images                              */
+/*                             Images                               */
 
 /* ---------------------------------------------------------------- */
 
 #game_image {
   width: 200px;
   height: 200px;
+}
+
+/* ---------------------------------------------------------------- */
+
+/*                             Test                                 */
+
+/* ---------------------------------------------------------------- */
+
+.red {
+  background-color: red !important;
+  box-shadow: 0rem 0rem 1rem 0rem rgb(110, 3, 3) !important;
 }
 
 @media (hover:hover) {
