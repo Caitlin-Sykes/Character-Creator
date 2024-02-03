@@ -33,10 +33,31 @@
 }
 
 /* ---------------------------------------------------------------- */
-/*                             Test                                 */
+/*                             Rainbow                              */
 /* ---------------------------------------------------------------- */
+.purpleText {
+    font-family: arial black;
+    font-size: 35px;
+    background-image:
+        linear-gradient(to right, rgb(104, 5, 196),
+            rgb(120, 5, 196),
+            rgb(136, 5, 196),
+            rgb(152, 5, 196),
+            rgb(168, 5, 196),
+            rgb(184, 5, 196),
+            rgb(200, 5, 196),
+            rgb(216, 5, 196),
+            rgb(232, 5, 196),
+            rgb(248, 5, 196),
+            rgb(255, 5, 196),
+            rgb(255, 255, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 100s linear infinite;
+}
 
-.red {
-    background-color: red !important;
-    box-shadow: 0rem 0rem 1rem 0rem rgb(110, 3, 3) !important;
+@keyframes move {
+    to {
+        background-position: 4500vh;
+    }
 }
