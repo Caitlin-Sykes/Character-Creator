@@ -26,4 +26,6 @@ Nothing because I haven't built it yet
     - In the root directory, run "npm install"
     - Run "npm run start" in the root directory
 
+# To make changes
+    - run "npx tailwindcss -i ./frontend/src/css/input.css -o ./frontend/src/css/output.css --watch" to monitor changes to the css.
     

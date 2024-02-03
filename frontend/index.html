@@ -53,31 +53,18 @@
 
   <!-- Main content stuff -->
   <div>
-      <!-- Test stuff -->
-      <h1>Hello World!</h1>
-    <p>
-        We are using Node.js <span id="node-version"></span>,
-        Chromium <span id="chrome-version"></span>,
-        and Electron <span id="electron-version"></span>.
-    </p>
-    <!-- End test stuff -->
-    
-      <!-- Modal does work. custom colours do not -->
-      <!-- Open the modal using ID.showModal() method -->
-      <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
-      <dialog id="my_modal_1" class="modal bg-dark-blue">
-        <div class="modal-box">
-          <h3 class="font-bold text-lg">Hello!</h3>
-          <p class="py-4">Press ESC key or click the button below to close</p>
-          <div class="modal-action">
-            <form method="dialog">
-              <!-- if there is a button in form, it will close the modal -->
-              <button class="btn">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
-  
+   
+
+  <div role="tablist" class="tabs tabs-bordered">
+  <input id="tabA" type="radio" name="tabA" role="tab" class="tab" aria-label="Tab A" />
+  <div role="tabpanel" class="tab-content p-10">Tab content 1</div>
+
+  <input id="tabB" type="radio" name="tabB" role="tab" class="tab" aria-label="Tab B" />
+  <div role="tabpanel" class="tab-content p-10">Tab content 2</div>
+
+  <input id="tabC" type="radio" name="tabC" role="tab" class="tab" aria-label="Tab C" />
+  <div role="tabpanel" class="tab-content p-10">Tab content 3</div>
+</div>
 
   
   </div>
@@ -85,7 +72,7 @@
 
 
   <script src="./src/js/gametab.js"></script>
-  <!-- <script src="./src/js/html_tabs_switcher.js"></script> -->
+  <script src="./src/js/html_tabs_switcher.js"></script>
   <!--Imports the gametab javascript click-->
 </body>
 
