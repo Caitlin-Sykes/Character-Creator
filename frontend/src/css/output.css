@@ -8391,6 +8391,10 @@ details.collapse summary::-webkit-details-marker {
   width: weird-and-invalid;
 }
 
+.flex-auto {
+  flex: 1 1 auto;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -9992,7 +9996,7 @@ details.collapse summary::-webkit-details-marker {
 
 /* ---------------------------------------------------------------- */
 
-/*                             Rainbow                              */
+/*                             Purple!                              */
 
 /* ---------------------------------------------------------------- */
 
@@ -10022,6 +10026,24 @@ details.collapse summary::-webkit-details-marker {
     background-position: 4500vh;
   }
 }
+
+/* ---------------------------------------------------------------- */
+
+/*                             Tab Styling                              */
+
+/* ---------------------------------------------------------------- */
+
+/* .tab[active="true"] {
+    text-decoration: underline red;
+}
+
+.tab-pages>section {
+    display: none;
+}
+
+.tab-content {
+    display: block;
+} */
 
 @media (hover:hover) {
   .table .hover\:hover:hovertr:hover,

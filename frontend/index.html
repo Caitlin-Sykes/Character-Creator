@@ -2,9 +2,9 @@
 <html lang="en" data-theme="night">
 
 <head>
-    <meta charset="UTF-8"/>
-    <!-- TODO: this breaks stuff vvv need to make it not break stuff -->
-    <!-- <meta
+  <meta charset="UTF-8" />
+  <!-- TODO: this breaks stuff vvv need to make it not break stuff -->
+  <!-- <meta
         http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self'"
       />
@@ -13,69 +13,77 @@
         content="default-src 'self'; script-src 'self'"
       /> -->
 
-    <link href=".\src\css\output.css" rel="stylesheet"/>
+  <link href=".\src\css\output.css" rel="stylesheet" />
 
-    <!-- material icons-->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+  <!-- material icons-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <title>Character Creator</title>
+  <title>Character Creator</title>
 </head>
 
 <body>
-<!--Begin Navbar-->
-<div class="navbar bg-primary content-evenly shadowNav mb-10">
+  <!--Begin Navbar-->
+  <div class="navbar bg-primary content-evenly shadowNav mb-10">
     <!-- Left menu button & menu -->
     <div class="drawer navbar-start">
-        <input id="my-drawer" type="checkbox" class="drawer-toggle"/>
-        <div class="drawer-content content-evenly">
-            <!-- Page content here -->
-            <label for="my-drawer" class="btn btn-square btn-ghost drawer-button"><span
-                    class="material-symbols-outlined">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content content-evenly">
+        <!-- Page content here -->
+        <label for="my-drawer" class="btn btn-square btn-ghost drawer-button"><span class="material-symbols-outlined">
             menu </span></label>
-        </div>
-        <!-- BUG: drawer be glitchy -->
-        <div class="drawer-side">
-            <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-            <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-                <!-- Sidebar content here -->
-                <li><a>Sidebar e 1</a></li>
-                <li><a>e Item 2</a></li>
-            </ul>
-        </div>
+      </div>
+      <!-- BUG: drawer be glitchy -->
+      <div class="drawer-side">
+        <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+          <!-- Sidebar content here -->
+          <li><a>Sidebar e 1</a></li>
+          <li><a>e Item 2</a></li>
+        </ul>
+      </div>
     </div>
 
     <!-- Nav Title -->
     <div class="navbar-end">
-        <a class="btn btn-ghost text-xl purpleText">Charactor Generator</a>
+      <a class="btn btn-ghost text-xl purpleText">Charactor Generator</a>
     </div>
-</div>
-<!--End Navbar-->
+  </div>
+  <!--End Navbar-->
 
-<!-- Main content stuff -->
-<div>
+  <!-- Main content stuff -->
+  <div>
 
 
-    <div role="tablist" class="tabs tabs-bordered tabs-lg">
-        <input id="tabA" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab A"/>
-        <div role="tabpanel" class="tab-content p-10">
-          <select id="container_game_dropdown"></select>
-        </div>
-        <input id="tabB" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab B"/>
-        <div role="tabpanel" class="tab-content p-10">tab 2</div>
-        <input id="tabC" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab C"/>
-      <div role="tabpanel" class="tab-content p-10">
+    <div role="tablist" class="tabs tabs-boxed tabs-lg flex">
+      <input id="tabA" type="radio" name="tab_group_🫕" role="tab" class="tab flex-auto tab-active" aria-label="Tab A">
+      <input id="tabB" type="radio" name="tab_group_🫕" role="tab" class="tab flex-auto" aria-label="Tab B" />
+      <input id="tabC" type="radio" name="tab_group_🫕" role="tab" class="tab flex-auto" aria-label="Tab C" />
+    </div>
+
+    <div class="flex">
+      <div id="tabA" role="tabpanel" class="tab-content p-10 flex-auto">
+        <select id="container_game_dropdown"></select>
+        tab1
+      </div>
+   
+      <div id="tabB" role="tabpanel" class="tab-content p-10 flex-auto">tab 2</div>
+      
+      <div id="tabC" role="tabpanel" class="tab-content p-10 flex-auto">
         tab_3
       </div>
     </div>
+      
 
 
-</div>
-<!-- End of main content stuff -->
+  </div>
+  <!-- End of main content stuff -->
 
 
-<script src="./src/js/gametab.js"></script>
-<!--Imports the gametab javascript click-->
+  <script src="./src/js/gametab.js"></script>
+  <script src="./src/js/tabSwitcher.js"></script>
+
+  <!--Imports the gametab javascript click-->
 </body>
 
 </html>

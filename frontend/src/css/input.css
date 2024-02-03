@@ -33,7 +33,7 @@
 }
 
 /* ---------------------------------------------------------------- */
-/*                             Rainbow                              */
+/*                             Purple!                              */
 /* ---------------------------------------------------------------- */
 .purpleText {
     font-family: arial black;
@@ -54,10 +54,26 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: move 100s linear infinite;
-}
+    }
 
 @keyframes move {
     to {
         background-position: 4500vh;
     }
 }
+
+/* ---------------------------------------------------------------- */
+/*                             Tab Styling                              */
+/* ---------------------------------------------------------------- */
+
+/* .tab[active="true"] {
+    text-decoration: underline red;
+}
+
+.tab-pages>section {
+    display: none;
+}
+
+.tab-content {
+    display: block;
+} */

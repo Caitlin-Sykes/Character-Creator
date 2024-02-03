@@ -21,8 +21,7 @@ module.exports = {
         }
       },
 
-    ], // false: only light + dark | true: all | array - specific themes
+    ],
     darkTheme: "night", // name of one of the included themes for dark mode
-    //themeRoot: "*", // The element that receives theme color CSS variables
   },
 }
