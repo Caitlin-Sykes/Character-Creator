@@ -2,78 +2,141 @@
 <html lang="en" data-theme="night">
 
 <head>
-  <meta charset="UTF-8" />
-  <!-- TODO: this breaks stuff vvv need to make it not break stuff -->
-  <!-- <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    /> -->
+    <meta charset="UTF-8"/>
+    <!-- TODO: this breaks stuff vvv need to make it not break stuff -->
+    <!-- <meta
+        http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+      />
+      <meta
+        http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+      /> -->
 
-  <link href=".\src\css\output.css" rel="stylesheet" />
+    <link href=".\src\css\output.css" rel="stylesheet"/>
 
-  <!-- material icons-->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- material icons-->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
 
-  <title>Character Creator</title>
+    <title>Character Creator</title>
 </head>
 
 <body>
-  <!--Begin Navbar-->
-  <div class="navbar bg-primary content-evenly shadowNav mb-10">
+<!--Begin Navbar-->
+<div class="navbar bg-primary content-evenly shadowNav mb-10">
     <!-- Left menu button & menu -->
     <div class="drawer navbar-start">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content content-evenly">
-        <!-- Page content here -->
-        <label for="my-drawer" class="btn btn-square btn-ghost drawer-button"><span class="material-symbols-outlined">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle"/>
+        <div class="drawer-content content-evenly">
+            <!-- Page content here -->
+            <label for="my-drawer" class="btn btn-square btn-ghost drawer-button"><span
+                    class="material-symbols-outlined">
             menu </span></label>
-      </div>
-      <!-- BUG: drawer be glitchy -->
-      <div class="drawer-side">
-        <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-          <!-- Sidebar content here -->
-          <li><a>Sidebar e 1</a></li>
-          <li><a>e Item 2</a></li>
-        </ul>
-      </div>
+        </div>
+        <!-- BUG: drawer be glitchy -->
+        <div class="drawer-side">
+            <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+            <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                <!-- Sidebar content here -->
+                <li><a>Sidebar e 1</a></li>
+                <li><a>e Item 2</a></li>
+            </ul>
+        </div>
     </div>
 
     <!-- Nav Title -->
     <div class="navbar-end">
-      <a class="btn btn-ghost text-xl">Charactor Generator</a>
+        <a class="btn btn-ghost text-xl">Charactor Generator</a>
     </div>
-  </div>
-  <!--End Navbar-->
-
-  <!-- Main content stuff -->
-  <div>
-   
-
-  <div role="tablist" class="tabs tabs-bordered">
-  <input id="tabA" type="radio" name="tabA" role="tab" class="tab" aria-label="Tab A"/>
-  <div role="tabpanel" class="tab-content p-10">Tab content 1</div>
-
-  <input id="tabB" type="radio" name="tabB" role="tab" class="tab" aria-label="Tab B" />
-  <div role="tabpanel" class="tab-content p-10">Tab content 2</div>
-
-  <input id="tabC" type="radio" name="tabC" role="tab" class="tab" aria-label="Tab C" />
-  <div role="tabpanel" class="tab-content p-10">Tab content 3</div>
 </div>
+<!--End Navbar-->
 
-  
-  </div>
-  <!-- End of main content stuff -->
+<!-- Main content stuff -->
+<div>
 
 
-  <script src="./src/js/gametab.js"></script>
-  <script src="./src/js/html_tabs_switcher.js"></script>
-  <!--Imports the gametab javascript click-->
+    <div role="tablist" class="tabs tabs-bordered">
+        <input id="tabA" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab A"/>
+        <div role="tabpanel" class="tab-content p-10">Hi Cait 🙋‍♂️</div>
+        <input id="tabB" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab B"/>
+        <div role="tabpanel" class="tab-content p-10">These Tabs Seem To</div>
+        <input id="tabC" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab C"/>
+      <div role="tabpanel" class="tab-content p-10 🔴"><span>W</span><span>o</span><span>r</span><span>k</span><span>!</span></div>
+    </div>
+  <style>
+    .🔴 {
+      margin-top: 0.6em;
+      font-size: 50px;
+      text-align: center;
+    }
+
+    .🔴 span {
+      display: inline-block;
+      -webkit-animation: wave-text 1s ease-in-out infinite;
+      animation: wave-text 1s ease-in-out infinite;
+    }
+
+    .🔴 span:nth-of-type(1) {
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+    }
+    .🔴 span:nth-of-type(2) {
+      -webkit-animation-delay: 0.1s;
+      animation-delay: 0.1s;
+    }
+    .🔴 span:nth-of-type(3) {
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+    }
+    .🔴 span:nth-of-type(4) {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+    .🔴 span:nth-of-type(5) {
+      -webkit-animation-delay: 0.4s;
+      animation-delay: 0.4s;
+    }
+
+    @-webkit-keyframes wave-text {
+      00% {
+        transform: translateY(0em);
+        color: hsl(0,100%,50%);
+      }
+      60% {
+        transform: translateY(-0.6em);
+        color: hsl(180,100%,50%);
+      }
+      100% {
+        transform: translateY(0em);
+        color: hsl(360,100%,50%);
+      }
+    }
+
+    @keyframes wave-text {
+      00% {
+        transform: translateY(0em);
+        color: hsl(0,100%,50%);
+      }
+      60% {
+        transform: translateY(-0.6em);
+        color: hsl(180,100%,50%);
+      }
+      100% {
+        transform: translateY(0em);
+        color: hsl(360,100%,50%);
+      }
+    }
+  </style>
+
+
+</div>
+<!-- End of main content stuff -->
+
+
+<script src="./src/js/gametab.js"></script>
+<script src="./src/js/html_tabs_switcher.js"></script>
+<!--Imports the gametab javascript click-->
 </body>
 
 </html>
