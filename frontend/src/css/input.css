@@ -81,7 +81,7 @@ body {
 }
 
 /* ---------------------------------------------------------------- */
-/*    Custom Colours  (Tailwind nor Daisy would let me add them     */
+/*    Custom Colours  (Tailwind nor Daisy would let me add them)     */
 /* ---------------------------------------------------------------- */
 
 .testing {
@@ -93,6 +93,28 @@ body {
 /* ---------------------------------------------------------------- */
 .tabs-boxed .tab-active:not(.tab-disabled):not([disabled]),
 .tabs-boxed :is(input:checked) {
-  background-color: #762753;
+  background-color: #591e3ec7;
   color: #e84ca2;
+}
+
+/* ---------------------------------------------------------------- */
+/*                          Icon Styling                            */
+/* ---------------------------------------------------------------- */
+
+.link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link-hover:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(158, 7, 7, 0.549);
+}
+
+.footIcon {
+    font-size: 1.5rem;
+    color: #672b82;
+    margin-right: 0.5rem;
 }

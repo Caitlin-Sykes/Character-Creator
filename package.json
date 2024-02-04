@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Caitlin-Sykes/Character-Creator#readme",
   "dependencies": {
+    "bootstrap-icons": "^1.11.3",
     "python-shell": "^5.0.0"
   }
 }
