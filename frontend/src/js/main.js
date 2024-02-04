@@ -14,7 +14,7 @@ const createWindow = () => {
     })
 
     // Creates python process
-    let python = require('child_process').spawn('py', ['./backend/main.py']);
+    let python = require('child_process').spawn('python', ['./backend/main.py']);
     python.stdout.on('data', function (data) {
         console.log("data: ", data.toString('utf8'));
     });

@@ -8371,6 +8371,29 @@ details.collapse summary::-webkit-details-marker {
   display: none;
 }
 
+.size-full {
+  width: 100%;
+  height: 100%;
+}
+
+.size-auto {
+  width: auto;
+  height: auto;
+}
+
+.max-h-max {
+  max-height: -moz-max-content;
+  max-height: max-content;
+}
+
+.max-h-screen {
+  max-height: 100vh;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
 .min-h-full {
   min-height: 100%;
 }
@@ -8727,6 +8750,14 @@ details.collapse summary::-webkit-details-marker {
 
 .grid-flow-col-dense {
   grid-auto-flow: column dense;
+}
+
+.auto-rows-max {
+  grid-auto-rows: max-content;
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -9370,6 +9401,21 @@ details.collapse summary::-webkit-details-marker {
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
+}
+
+.bg-warning {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-wa,oklch(var(--wa)/var(--tw-bg-opacity)));
+}
+
+.bg-info {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-in,oklch(var(--in)/var(--tw-bg-opacity)));
+}
+
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-s,oklch(var(--s)/var(--tw-bg-opacity)));
 }
 
 .decoration-slice {

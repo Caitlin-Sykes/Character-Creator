@@ -55,32 +55,34 @@
   <div>
 
 
-    <div role="tablist" class="tabs tabs-boxed tabs-lg flex">
-      <input id="tabA" type="radio" name="tab_group_🫕" role="tab" class="tab flex-auto tab-active" aria-label="Tab A">
-      <input id="tabB" type="radio" name="tab_group_🫕" role="tab" class="tab flex-auto" aria-label="Tab B" />
-      <input id="tabC" type="radio" name="tab_group_🫕" role="tab" class="tab flex-auto" aria-label="Tab C" />
+    <div role="tablist" class="tabs tabs-boxed tabs-lg flex grid grid-flow-columns">
+      <input tab-id="tabA" type="radio" name="tab_group_🫕" role="tab" class="tab tab-active" aria-label="Tab A">
+      <input tab-id="tabB" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab B" />
+      <input tab-id="tabC" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab C" />
     </div>
 
-    <div class="flex">
-      <div id="tabA" role="tabpanel" class="tab-content p-10 flex-auto">
+    <div>
+      <div class="flex">
+      <div tab-id="tabA" role="tabpanel" class="p-10 content flex-auto">
         <select id="container_game_dropdown"></select>
-        tab1
-      </div>
+        tab 1</div>
    
-      <div id="tabB" role="tabpanel" class="tab-content p-10 flex-auto">tab 2</div>
+      <div tab-id="tabB" role="tabpanel" class="p-10 content flex-auto hidden">tab 2</div>
       
-      <div id="tabC" role="tabpanel" class="tab-content p-10 flex-auto">
+      <div tab-id="tabC" role="tabpanel" class="p-10 content flex-auto hidden">
         tab_3
       </div>
     </div>
       
+    </div>
+    
 
 
   </div>
   <!-- End of main content stuff -->
 
 
-  <script src="./src/js/gametab.js"></script>
+  <!-- <script src="./src/js/gametab.js"></script> -->
   <script src="./src/js/tabSwitcher.js"></script>
 
   <!--Imports the gametab javascript click-->
