@@ -51,17 +51,15 @@
   </div>
   <!--End Navbar-->
 
-  <!-- Main content stuff -->
+  <main>
+    <!-- Tabs content stuff -->
   <div>
-
-
     <div role="tablist" class="tabs tabs-boxed tabs-lg flex grid grid-flow-columns">
-      <input tab-id="tabA" type="radio" name="tab_group_🫕" role="tab" class="tab tab-active" aria-label="Tab A">
+      <input tab-id="tabA" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab A" checked>
       <input tab-id="tabB" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab B" />
       <input tab-id="tabC" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab C" />
     </div>
 
-    <div>
       <div class="flex">
       <div tab-id="tabA" role="tabpanel" class="p-10 content flex-auto">
         <select id="container_game_dropdown"></select>
@@ -72,17 +70,15 @@
       <div tab-id="tabC" role="tabpanel" class="p-10 content flex-auto hidden">
         tab_3
       </div>
-    </div>
-      
-    </div>
-    
-
-
+    </div>    
   </div>
-  <!-- End of main content stuff -->
+  <!-- End of tabs content stuff -->
+
+  </main>
+  
 
 
-  <!-- <script src="./src/js/gametab.js"></script> -->
+  <script src="./src/js/gametab.js"></script>
   <script src="./src/js/tabSwitcher.js"></script>
 
   <!--Imports the gametab javascript click-->
