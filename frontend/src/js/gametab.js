@@ -33,9 +33,38 @@ async function fetchData(url) {
     return data;
 }
 
+function sendGame(event) {
+    //Get the container_game_dropdown
+    var dropdown = document.getElementById("container_game_dropdown");
 
+    // Get the selected option
+    var selectedOption = dropdown.options[dropdown.selectedIndex];
+
+    // Get the value of the selected option
+    var selectedValue = selectedOption.value;
+
+    //Sends a request to the backend
+    // this is ajax. idk if this is what i need. the abive works tho.
+    // $.ajax({
+    //     url: "{{url_for('view.path') }}",
+    //     type: 'POST',
+    //     data: {
+    //         name: selectedValue
+    //     },
+    //     success: function (response) {
+    //     },
+    //     error: function (response) {
+    //     }
+    // });
+}
 
 //On the DOM load, runs the commands
 document.addEventListener("DOMContentLoaded", function (arg) {
     setUpGameSelect();
+
+    //Gets drop down
+    let game_drop_down = document.getElementById("submitGame")
+
+    //For every tab in tabs, add event listener
+    game_drop_down.addEventListener("click", sendGame);
 });

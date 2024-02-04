@@ -8276,14 +8276,6 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 0.5rem;
 }
 
-.mt-auto {
-  margin-top: auto;
-}
-
-.ms-auto {
-  margin-inline-start: auto;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -8411,12 +8403,12 @@ details.collapse summary::-webkit-details-marker {
   width: weird-and-invalid;
 }
 
-.flex-auto {
-  flex: 1 1 auto;
-}
-
 .flex-1 {
   flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
 }
 
 .flex-shrink {
@@ -8433,10 +8425,6 @@ details.collapse summary::-webkit-details-marker {
 
 .grow {
   flex-grow: 1;
-}
-
-.grow-0 {
-  flex-grow: 0;
 }
 
 .table-auto {
@@ -8755,18 +8743,6 @@ details.collapse summary::-webkit-details-marker {
 
 .grid-flow-col-dense {
   grid-auto-flow: column dense;
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -9550,6 +9526,10 @@ details.collapse summary::-webkit-details-marker {
   padding: 1rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -10160,6 +10140,11 @@ body {
   font-size: 1.5rem;
   color: #672b82;
   margin-right: 0.5rem;
+}
+
+.navIcon {
+  font-size: 2rem;
+  color: #672b82;
 }
 
 @media (hover:hover) {

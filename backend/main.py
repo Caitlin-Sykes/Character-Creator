@@ -1,4 +1,4 @@
-from flask import Flask #imports flask
+from flask import Flask, request #imports flask
 # from flask_cors import CORS #imports cross origin request
 import generation as gen
 
@@ -12,7 +12,6 @@ def landing_page():
     return "hello this is the main page. nice to meet you."
 
 # Gets all specific games
-# TODO: change this to be a request/make more secure
 @main.route('/supported_games',  methods=['GET'])
 def get_supported_games():
     return gen.get_games_from_json()
@@ -22,6 +21,17 @@ def get_supported_games():
 def get_specific_games():
     return gen.generate_random_race()
 
+
+@main.route("/path", methods=['GET', 'POST'])
+def view():
+    name = request.form.get('name')
+    print(name)
+    match(name):
+        case "Baldur's Gate 3":
+            return "assets/images/bg3.png"
+        case _:
+            return "lol."
+    ...
 #Run flask    
 if __name__ == '__main__':
     main.run(debug=True, port=8028)
