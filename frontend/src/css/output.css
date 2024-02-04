@@ -511,8 +511,7 @@ html {
   --b2: 0.193144 0.037037 265.754874;
   --b3: 0.178606 0.034249 265.754874;
   --bc: 0.841536 0.007965 265.754874;
-  --pc: 0.851329 0.007312 263.610427;
-  --sc: 0.865489 0.016627 265.631022;
+  --sc: 0.844091 0.011408 316.749029;
   --ac: 0.87659 0.019224 265.438951;
   --nc: 0.855899 0.00737 260.030984;
   --suc: 0.156904 0.026506 181.911977;
@@ -527,8 +526,8 @@ html {
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --p: 0.256643 0.03656 263.610427;
-  --s: 0.327448 0.083136 265.631022;
+  --p: 0.217787 0 0;
+  --s: 0.220454 0.057042 316.749029;
   --a: 0.382949 0.096122 265.438951;
   --n: 0.279495 0.036848 260.030984;
   --b1: 0.207682 0.039824 265.754874;
@@ -537,7 +536,7 @@ html {
   --su: 0.78452 0.132529 181.911977;
   --wa: 0.832428 0.139558 82.95003;
   --er: 0.717858 0.170255 13.11834;
-  --darkblue: #0e172c;
+  --pc: 0.238345 0.07193 314.342043;
 }
 
 *, ::before, ::after {
@@ -8264,12 +8263,16 @@ details.collapse summary::-webkit-details-marker {
   clear: none;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
+.m-5 {
+  margin: 1.25rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-auto {
+  margin-top: auto;
 }
 
 .box-border {
@@ -8371,27 +8374,8 @@ details.collapse summary::-webkit-details-marker {
   display: none;
 }
 
-.size-full {
-  width: 100%;
-  height: 100%;
-}
-
-.size-auto {
-  width: auto;
-  height: auto;
-}
-
-.max-h-max {
-  max-height: -moz-max-content;
-  max-height: max-content;
-}
-
-.max-h-screen {
-  max-height: 100vh;
-}
-
-.max-h-full {
-  max-height: 100%;
+.h-screen {
+  height: 100vh;
 }
 
 .min-h-full {
@@ -8750,14 +8734,6 @@ details.collapse summary::-webkit-details-marker {
 
 .grid-flow-col-dense {
   grid-auto-flow: column dense;
-}
-
-.auto-rows-max {
-  grid-auto-rows: max-content;
-}
-
-.grid-rows-3 {
-  grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -9403,14 +9379,9 @@ details.collapse summary::-webkit-details-marker {
   background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
 }
 
-.bg-warning {
+.bg-primary-content {
   --tw-bg-opacity: 1;
-  background-color: var(--fallback-wa,oklch(var(--wa)/var(--tw-bg-opacity)));
-}
-
-.bg-info {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-in,oklch(var(--in)/var(--tw-bg-opacity)));
+  background-color: var(--fallback-pc,oklch(var(--pc)/var(--tw-bg-opacity)));
 }
 
 .bg-secondary {
@@ -10010,6 +9981,16 @@ details.collapse summary::-webkit-details-marker {
 
 /* ---------------------------------------------------------------- */
 
+/*                             Fonts                                */
+
+/* ---------------------------------------------------------------- */
+
+body {
+  font-family: "Cascadia Code", "Helvetica", "Arial", "Comic Sans";
+}
+
+/* ---------------------------------------------------------------- */
+
 /*                             Shadows                              */
 
 /* ---------------------------------------------------------------- */
@@ -10024,9 +10005,22 @@ details.collapse summary::-webkit-details-marker {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 0.5rem;
-  box-shadow: 0rem 0rem 1rem 0rem rgba(102, 32, 180, 1);
-  background: linear-gradient(to bottom, rgba(102, 32, 180, 1) 0%, rgba(102, 32, 180, 0) 100%);
+  height: 1rem;
+  background: linear-gradient(to bottom, rgba(142, 68, 173, 1) 0%, rgba(158, 7, 7, 0.549) 100%, #2b1236 100%);
+}
+
+.shadowFoot {
+  position: relative;
+}
+
+.shadowFoot::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background: linear-gradient(to top, rgba(142, 68, 173, 1) 0%, rgba(158, 7, 7, 0.549) 100%, #2b1236 100%);
 }
 
 /* ---------------------------------------------------------------- */
@@ -10047,7 +10041,6 @@ details.collapse summary::-webkit-details-marker {
 /* ---------------------------------------------------------------- */
 
 .purpleText {
-  font-family: arial black;
   font-size: 35px;
   background-image:
         linear-gradient(to right, rgb(104, 5, 196),
@@ -10063,6 +10056,7 @@ details.collapse summary::-webkit-details-marker {
             rgb(255, 5, 196),
             rgb(255, 255, 255));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: move 100s linear infinite;
 }
@@ -10075,21 +10069,25 @@ details.collapse summary::-webkit-details-marker {
 
 /* ---------------------------------------------------------------- */
 
-/*                             Tab Styling                              */
+/*    Custom Colours  (Tailwind nor Daisy would let me add them     */
 
 /* ---------------------------------------------------------------- */
 
-/* .tab[active="true"] {
-    text-decoration: underline red;
+.testing {
+  background-color: #ea3535;
 }
 
-.tab-pages>section {
-    display: none;
-}
+/* ---------------------------------------------------------------- */
 
-.tab-content {
-    display: block;
-} */
+/*                          Tab Styling                             */
+
+/* ---------------------------------------------------------------- */
+
+.tabs-boxed .tab-active:not(.tab-disabled):not([disabled]),
+.tabs-boxed :is(input:checked) {
+  background-color: #762753;
+  color: #e84ca2;
+}
 
 @media (hover:hover) {
   .table .hover\:hover:hovertr:hover,

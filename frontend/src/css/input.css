@@ -3,7 +3,13 @@
 @tailwind utilities;
 
 
+/* ---------------------------------------------------------------- */
+/*                             Fonts                                */
+/* ---------------------------------------------------------------- */
 
+body {
+    font-family: "Cascadia Code", "Helvetica", "Arial", "Comic Sans";
+}
 /* ---------------------------------------------------------------- */
 /*                             Shadows                              */
 /* ---------------------------------------------------------------- */
@@ -14,15 +20,27 @@
 
 .shadowNav::after {
     content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 0.5rem;
-        box-shadow: 0rem 0rem 1rem 0rem rgba(102, 32, 180, 1);
-        background: linear-gradient(to bottom, rgba(102, 32, 180, 1) 0%, rgba(102, 32, 180, 0) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    background: linear-gradient(to bottom, rgba(142, 68, 173, 1) 0%, rgba(158, 7, 7, 0.549) 100%, #2b1236 100%);
 }
 
+.shadowFoot {
+    position: relative;
+}
+
+.shadowFoot::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    background: linear-gradient(to top, rgba(142, 68, 173, 1) 0%, rgba(158, 7, 7, 0.549) 100%, #2b1236 100%);
+}
 /* ---------------------------------------------------------------- */
 /*                             Images                               */
 /* ---------------------------------------------------------------- */
@@ -36,7 +54,6 @@
 /*                             Purple!                              */
 /* ---------------------------------------------------------------- */
 .purpleText {
-    font-family: arial black;
     font-size: 35px;
     background-image:
         linear-gradient(to right, rgb(104, 5, 196),
@@ -52,6 +69,7 @@
             rgb(255, 5, 196),
             rgb(255, 255, 255));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: move 100s linear infinite;
     }
@@ -63,17 +81,18 @@
 }
 
 /* ---------------------------------------------------------------- */
-/*                             Tab Styling                              */
+/*    Custom Colours  (Tailwind nor Daisy would let me add them     */
 /* ---------------------------------------------------------------- */
 
-/* .tab[active="true"] {
-    text-decoration: underline red;
+.testing {
+    background-color: #ea3535;
 }
 
-.tab-pages>section {
-    display: none;
+/* ---------------------------------------------------------------- */
+/*                          Tab Styling                             */
+/* ---------------------------------------------------------------- */
+.tabs-boxed .tab-active:not(.tab-disabled):not([disabled]),
+.tabs-boxed :is(input:checked) {
+  background-color: #762753;
+  color: #e84ca2;
 }
-
-.tab-content {
-    display: block;
-} */

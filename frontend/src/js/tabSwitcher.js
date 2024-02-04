@@ -1,7 +1,7 @@
 //A function to handle clicking on a tab
 function tab_click(event) {
-    let currentTab = event.target.getAttribute("tab-id"); //gets the attribute of clicked tab "checked"
-    let neighbourTabs = document.querySelectorAll("input.tab-id, div.content");
+    let currentTab = event.target.getAttribute("tab-id"); //gets the attribute of clicked tab "tab-id"
+    let neighbourTabs = document.querySelectorAll("input.tab-id, div.content"); //gets input tabs and panel tabs
    
     //For every neighbour tab, add tab-active
     neighbourTabs.forEach((tab) => {
@@ -24,8 +24,7 @@ function tab_click(event) {
 
 //On the DOM load, runs the commands
 document.addEventListener("DOMContentLoaded", function () {
-    //Sets initial tab to A and gets all tabs with class name tab
-    // let currentTab = "tabA"
+    //Gets all tabs with class name tab
     let tabs = Array.from(document.getElementsByClassName("tab"));
 
     //For every tab in tabs, add event listener

@@ -22,9 +22,9 @@
   <title>Character Creator</title>
 </head>
 
-<body>
+<body class="flex flex-col h-screen bg-primary-content">
   <!--Begin Navbar-->
-  <div class="navbar bg-primary content-evenly shadowNav mb-10">
+  <header class="navbar bg-primary content-evenly shadowNav p-10">
     <!-- Left menu button & menu -->
     <div class="drawer navbar-start">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
@@ -48,40 +48,56 @@
     <div class="navbar-end">
       <a class="btn btn-ghost text-xl purpleText">Charactor Generator</a>
     </div>
-  </div>
+  </header>
   <!--End Navbar-->
 
-  <main>
+  <main class="m-5">
     <!-- Tabs content stuff -->
-  <div>
-    <div role="tablist" class="tabs tabs-boxed tabs-lg flex grid grid-flow-columns">
-      <input tab-id="tabA" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab A" checked>
-      <input tab-id="tabB" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab B" />
-      <input tab-id="tabC" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab C" />
-    </div>
-
-      <div class="flex">
-      <div tab-id="tabA" role="tabpanel" class="p-10 content flex-auto">
-        <select id="container_game_dropdown"></select>
-        tab 1</div>
-   
-      <div tab-id="tabB" role="tabpanel" class="p-10 content flex-auto hidden">tab 2</div>
-      
-      <div tab-id="tabC" role="tabpanel" class="p-10 content flex-auto hidden">
-        tab_3
+    <div>
+      <div role="tablist" class="tabs tabs-boxed tabs-lg grid-flow-columns bg-secondary">
+        <input tab-id="tabA" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab A" checked>
+        <input tab-id="tabB" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab B" />
+        <input tab-id="tabC" type="radio" name="tab_group_🫕" role="tab" class="tab" aria-label="Tab C" />
       </div>
-    </div>    
-  </div>
-  <!-- End of tabs content stuff -->
+
+      <div>
+        <!-- Tab One-->
+        <div tab-id="tabA" role="tabpanel" class="p-10 content flex-auto">
+          <div class="flex">
+            <div class="flex-grow card rounded-box place-items-center"> 
+              <select id="container_game_dropdown"></select>
+            </div>
+            <div class="flex-grow  rounded-box divider divider-horizontal"></div>
+            <div class="flex-grow card rounded-box place-items-center">content</div>
+          </div>
+        </div>
+        <!--End Tab One-->
+        
+        <!-- Tab Two-->
+        <div tab-id="tabB" role="tabpanel" class="p-10 content flex-auto hidden">
+          tab 2
+        </div>
+        <!-- End Tab Two-->
+
+        <!-- Tab Three-->
+        <div tab-id="tabC" role="tabpanel" class="p-10 content flex-auto hidden">
+          tab_3
+        </div>
+        <!-- End Tab Three-->
+      </div>
+    </div>
+    <!-- End of tabs content stuff -->
 
   </main>
-  
 
+  <!-- Footer -->
+  <footer class="mt-auto bg-primary content-evenly shadowFoot p-10">
+    SCREAMING
+  </footer>
+  <!-- End of Footer -->
 
+  <!-- JavaScript -->
   <script src="./src/js/gametab.js"></script>
   <script src="./src/js/tabSwitcher.js"></script>
-
-  <!--Imports the gametab javascript click-->
 </body>
-
 </html>
