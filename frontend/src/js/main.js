@@ -60,14 +60,12 @@ app.whenReady().then(() => {
 //On closey stuff
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        //Post request to kill server
-        fetch(`${HOST}${PORT}/kill`, {
-            method: "POST",
-        });
-        
-       
         app.quit()
     }
+    //Post request to kill server
+    fetch(`${HOST}${PORT}/kill`, {
+        method: "POST",
+    });
 })
 
 // Runs flask server as a background process, hides it
