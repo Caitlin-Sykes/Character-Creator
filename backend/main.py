@@ -1,10 +1,13 @@
-from flask import Flask, request #imports flask
-# from flask_cors import CORS #imports cross origin request
+import os
+from threading import Timer
+from flask import Flask, request
+from jinja2 import Undefined #imports flask
 import generation as gen
 
 main = Flask(__name__) #main flask instance
-
-# CORS(main)
+HEARTBEAT_TIMEOUT = 360 #Timeout for heartbeat (six mins)
+PID = os.getpid() # Get the main process's PID in a global variable
+heartbeat = None
 
 
 @main.route('/')
@@ -22,6 +25,7 @@ def get_specific_games():
     return gen.generate_random_race()
 
 
+#does nothin atm
 @main.route("/path", methods=['GET', 'POST'])
 def view():
     name = request.form.get('name')
@@ -31,8 +35,44 @@ def view():
             return "assets/images/bg3.png"
         case _:
             return "lol."
-    ...
+
+
+#A function to check the heartbeat, called by the JS
+@main.route("/check_heartbeat", methods=['GET'])
+def check_heartbeat():
+    global heartbeat
+    
+    if heartbeat:
+        #Stops the timer
+        heartbeat.cancel() 
+    
+    #Restarts the timer
+    restart_heartbeat()
+    
+    return "Still alive."
+  
+    
+#Kills just the flask server
+@main.route("/kill", methods=['GET'])
+def death():
+    print("Killing the server...", flush=True)
+    os._exit(0)
+    
+    return "Killing the server..."
+    
+    
+
+
+#Function to restart the heartbeat
+#Calls "death" function if timeframe [HEARTBEAT_TIMEOUT] has passed.
+def restart_heartbeat():
+    global heartbeat
+    heartbeat = Timer(HEARTBEAT_TIMEOUT, death)
+    heartbeat.start()
+    print(heartbeat, flush=True)
+
 #Run flask    
 if __name__ == '__main__':
+    restart_heartbeat()
     main.run(debug=True, port=8028)
 

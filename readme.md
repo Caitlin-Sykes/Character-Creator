@@ -29,5 +29,5 @@ Nothing because I haven't built it yet
 # To make changes
     - run "npx tailwindcss -i ./frontend/src/css/input.css -o ./frontend/src/css/output.css --watch" to monitor changes to the css.
 # With thanks to:
-    🔴 Adam, for helping explain JavaScript to me and debug my Tailwind. 🔴;
+    🔴 Adam, for helping explain JavaScript to me and debug my Tailwind. 🔴
     

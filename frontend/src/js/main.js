@@ -1,6 +1,8 @@
 // Sets up electron stuff
 const { app, BrowserWindow } = require('electron/main');
 const path = require('path');
+const HOST = "http://127.0.0.1:"
+const PORT = "8028"
 
 
 // Creates electron window
@@ -13,6 +15,7 @@ const createWindow = () => {
         },
     })
 
+    //TODO: maybe change this, bit unsafe.
     // Creates python process
     let python = require('child_process').spawn('python', ['./backend/main.py']);
     python.stdout.on('data', function (data) {
@@ -24,8 +27,24 @@ const createWindow = () => {
 
     //links to frontend page
     win.loadFile('frontend/index.html') 
-    
 }
+function heartbeatAlive() {
+    //Pings the endpoint
+    fetch(`${HOST}${PORT}/check_heartbeat`, {
+        method: "POST",
+    })
+        //Response for alive
+        .then(response => {
+            console.log('Thump. Thump. Thump. Still alive.');
+        })
+        //Response for error
+        .catch(error => {
+            console.error('** Flatline **', error);
+        });
+}
+
+// Pings every 5 mins
+setInterval(heartbeatAlive, 50000)
 
 // More random electron stuff
 app.whenReady().then(() => {
@@ -38,17 +57,15 @@ app.whenReady().then(() => {
     })
 })
 
+//On closey stuff
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        const { exec } = require('child_process');
-        exec('taskkill / f / t / im app.exe', (err, stdout, stderr) => {
-            if (err) {
-                console.log(err)
-                return;
-            }
-            console.log(`stdout: ${stdout}`);
-            console.log(`stderr: ${stderr}`);
+        //Post request to kill server
+        fetch(`${HOST}${PORT}/kill`, {
+            method: "POST",
         });
+        
+       
         app.quit()
     }
 })
