@@ -1,12 +1,10 @@
 import os
 from threading import Timer
-from flask import Flask, request
-from jinja2 import Undefined #imports flask
+from flask import Flask, request #imports flask
 import generation as gen
 
 main = Flask(__name__) #main flask instance
 HEARTBEAT_TIMEOUT = 360 #Timeout for heartbeat (six mins)
-PID = os.getpid() # Get the main process's PID in a global variable
 heartbeat = None
 
 
@@ -48,7 +46,6 @@ def check_heartbeat():
     
     #Restarts the timer
     restart_heartbeat()
-    
     return "Still alive."
   
     
@@ -57,11 +54,6 @@ def check_heartbeat():
 def death():
     print("Killing the server...", flush=True)
     os._exit(0)
-    
-    return "Killing the server..."
-    
-    
-
 
 #Function to restart the heartbeat
 #Calls "death" function if timeframe [HEARTBEAT_TIMEOUT] has passed.
@@ -69,7 +61,6 @@ def restart_heartbeat():
     global heartbeat
     heartbeat = Timer(HEARTBEAT_TIMEOUT, death)
     heartbeat.start()
-    print(heartbeat, flush=True)
 
 #Run flask    
 if __name__ == '__main__':
