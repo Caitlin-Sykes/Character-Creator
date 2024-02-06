@@ -4,6 +4,7 @@ import generation as gen
 import socketStuff as sckt
 
 main = Flask(__name__) #main flask instance
+sckt.start_server()
 
 
 
@@ -46,15 +47,8 @@ def check_heartbeat():
     sckt.restart_heartbeat()
     return "Still alive."
   
-    
-#Kills just the flask server
-@main.route("/kill", methods=['GET'])
-def death():
-    print("Killing the server...", flush=True)
-    os._exit(0)
 
 #Run flask    
 if __name__ == '__main__':
-    sckt.start_server()
     main.run(debug=True, port=8028)
 
