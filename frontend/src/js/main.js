@@ -22,7 +22,7 @@ function createWindow() {
     });
 }
 
-// Function to establish WebSocket connection with retry
+// Function to establish WebSocket connection
 function establishWebSocketConnection() {
     const client = new WebSocket("ws://localhost:8080");
 
@@ -39,7 +39,7 @@ function establishWebSocketConnection() {
     client.on('error', (error) => {
         console.error('WebSocket connection error:', error);
         // Retry establishing the connection after a delay
-        setTimeout(establishWebSocketConnection, 2000); // Retry after 2 seconds
+        setTimeout(establishWebSocketConnection, 5000); // Retry after 2 seconds
     });
 
 
@@ -61,10 +61,14 @@ function establishWebSocketConnection() {
 function heartbeat() {
 
     //Opens websocket
-    socket.onopen = function (e) {
+    client.onopen = function (e) {
         alert("Ah, ah, ah, ah, stayin alive.");
-        socket.send("Ah, ah, ah, ah, stayin alive.");
+        client.send("Ah, ah, ah, ah, stayin alive.");
     };
+
+    client.on('error', (error) => {
+        console.error("There do be an error connecting.", error);
+    })
 }
 
 // Event listener when Electron app is ready
