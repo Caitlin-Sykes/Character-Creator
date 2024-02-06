@@ -19,7 +19,6 @@ Nothing because I haven't built it yet
     - Cait's decent JSON-writing skills
     - Cait's hours of playing Baldur's Gate 3
     - Some of Adam's JS skills
-=
 
 # To run:
     - In the "Backend" folder, run "pip install -r requirements.txt"
