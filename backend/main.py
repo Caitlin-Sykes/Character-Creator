@@ -1,11 +1,10 @@
 import os
-from threading import Timer
 from flask import Flask, request #imports flask
 import generation as gen
+import socketStuff as sckt
 
 main = Flask(__name__) #main flask instance
-HEARTBEAT_TIMEOUT = 360 #Timeout for heartbeat (six mins)
-heartbeat = None
+
 
 
 @main.route('/')
@@ -38,14 +37,13 @@ def view():
 #A function to check the heartbeat, called by the JS
 @main.route("/check_heartbeat", methods=['GET'])
 def check_heartbeat():
-    global heartbeat
     
-    if heartbeat:
+    if sckt.heartbeat:
         #Stops the timer
-        heartbeat.cancel() 
+        sckt.heartbeat.cancel() 
     
     #Restarts the timer
-    restart_heartbeat()
+    sckt.restart_heartbeat()
     return "Still alive."
   
     
@@ -55,15 +53,8 @@ def death():
     print("Killing the server...", flush=True)
     os._exit(0)
 
-#Function to restart the heartbeat
-#Calls "death" function if timeframe [HEARTBEAT_TIMEOUT] has passed.
-def restart_heartbeat():
-    global heartbeat
-    heartbeat = Timer(HEARTBEAT_TIMEOUT, death)
-    heartbeat.start()
-
 #Run flask    
 if __name__ == '__main__':
-    restart_heartbeat()
+    sckt.start_server()
     main.run(debug=True, port=8028)
 

@@ -1,21 +1,48 @@
 // Sets up electron stuff
 const { app, BrowserWindow } = require('electron/main');
+let WebSocket = require('ws')
 const path = require('path');
-const HOST = "http://127.0.0.1:"
-const PORT = "8028"
 
 
 // Creates electron window
-const createWindow = () => {
-    const win = new BrowserWindow({
+function createWindow() {
+    win = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
-        },
-    })
+        }
+    });
 
-    //TODO: maybe change this, bit unsafe.
+    win.loadFile('frontend/index.html');
+
+    // Close Electron window when app is closed
+    win.on('closed', () => {
+        win = null;
+    });
+}
+
+// Function to establish WebSocket connection with retry
+function establishWebSocketConnection() {
+    const client = new WebSocket("ws://localhost:8080");
+
+    client.on('open', () => {
+        console.log('WebSocket connection established.');
+        // Optionally, you can send initial data or perform other actions here
+    });
+
+    client.on('message', (message) => {
+        console.log('Received message:', message);
+        // Handle incoming messages from the WebSocket server
+    });
+
+    client.on('error', (error) => {
+        console.error('WebSocket connection error:', error);
+        // Retry establishing the connection after a delay
+        setTimeout(establishWebSocketConnection, 2000); // Retry after 2 seconds
+    });
+
+
     // Creates python process
     let python = require('child_process').spawn('python', ['./backend/main.py']);
     python.stdout.on('data', function (data) {
@@ -27,50 +54,45 @@ const createWindow = () => {
 
     //links to frontend page
     win.loadFile('frontend/index.html') 
-}
-function heartbeatAlive() {
-    //Pings the endpoint
-    fetch(`${HOST}${PORT}/check_heartbeat`, {
-        method: "POST",
-    })
-        //Response for alive
-        .then(response => {
-            console.log('Thump. Thump. Thump. Still alive.');
-        })
-        //Response for error
-        .catch(error => {
-            console.error('** Flatline **', error);
-        });
+
 }
 
-// Pings every 5 mins
-setInterval(heartbeatAlive, 50000)
+//A function to open the websocket & ping it
+function heartbeat() {
 
-// More random electron stuff
+    //Opens websocket
+    socket.onopen = function (e) {
+        alert("Ah, ah, ah, ah, stayin alive.");
+        socket.send("Ah, ah, ah, ah, stayin alive.");
+    };
+}
+
+// Event listener when Electron app is ready
 app.whenReady().then(() => {
-    createWindow()
+    // Create Electron window
+    createWindow();
 
-    app.on('activate', () => {
-        if (BrowserWindow.getAllWindows().length === 0) {
-            createWindow()
+    // Attempt to establish WebSocket connection
+    establishWebSocketConnection();
+
+    // Event listener when all windows are closed
+    app.on('window-all-closed', () => {
+        if (process.platform !== 'darwin') {
+            app.quit();
         }
-    })
-})
+    });
+
 
 //On closey stuff
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit()
     }
-    //Post request to kill server
-    fetch(`${HOST}${PORT}/kill`, {
-        method: "POST",
-    });
 })
 
 // Runs flask server as a background process, hides it
 backend = path.join(process.cwd(), 'dist/main.exe')
-var execfile = require("child_process").execFile;
+let execfile = require("child_process").execFile;
 execfile(
     backend,
     {
@@ -88,3 +110,4 @@ execfile(
         }
     }
 )
+})

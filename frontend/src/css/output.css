@@ -8276,6 +8276,10 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 0.5rem;
 }
 
+.mt-auto {
+  margin-top: auto;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -10140,6 +10144,10 @@ body {
   font-size: 1.5rem;
   color: #672b82;
   margin-right: 0.5rem;
+}
+
+.footIcon:hover {
+  color: rgba(158, 7, 7, 0.549);
 }
 
 .navIcon {

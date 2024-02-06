@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- TODO: this breaks stuff vvv need to make it not break stuff -->
+    <!-- <meta
+        http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+      />
+      <meta
+        http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+      /> -->
+
+    <link href=".\src\css\output.css" rel="stylesheet" />
+
+    <!-- Bootstrap ICONS (not the framework, for future ref.)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <title>Character Creator</title>
+</head>
+
+<body class="flex flex-col h-screen bg-primary-content">
+    <!--Begin Navbar-->
+    <header class="navbar bg-primary content-evenly shadowNav p-10">
+        <!-- Left menu button & menu -->
+        <div class="drawer navbar-start">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content content-evenly">
+                <!-- Page content here -->
+                <label for="my-drawer" class="btn btn-square btn-ghost drawer-button"><i
+                        class=" pb-4 bi navIcon bi-list"></i></label>
+            </div>
+            <!-- BUG: drawer be glitchy -->
+            <div class="drawer-side">
+                <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                    <!-- Sidebar content here -->
+                    <li><a>Sidebar e 1</a></li>
+                    <li><a>e Item 2</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Nav Title -->
+        <div class="navbar-end pb-4">
+            <a class="btn btn-ghost text-xl purpleText" href="index.html">Charactor Generator</a>
+        </div>
+    </header>
+    <!--End Navbar-->
+
+    <main class="m-5 mt-auto">
+                <!-- Tab One-->
+                <div class="p-10 content bg-secondary-content">
+                    <div class="flex flex-row justify-center">
+                        <!-- Left Column-->
+                        <div class="card rounded-box place-items-center flex-1">
+                            <h3>Frontend</h3>
+                            <ul>
+                                <li>HTML/JS/CSS</li>
+                                <li>Tailwind for CSS</li>
+                                <li>DaisyUI for Tailwind</li>
+                                <li>Electron <span id="electron-version"></span></li>
+                                <li>NodeJS <span id="node-version"></span></li>
+                                <li>Chromium <span id="chrome-version"></span></li>
+                            </ul>
+
+                        </div>
+                        <!-- End Left Column-->
+                        <!-- Mid Column-->
+                        <div class="rounded-box divider divider-horizontal flex-1"></div>
+                        <!-- End Mid Column-->
+                        <!-- Right Column-->
+                        <div class="card rounded-box place-items-center flex-1">
+                            <h3>Backend</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>Flask</li>
+                                <li>DaisyUI for Tailwind</li>
+                            </ul>
+                        </div>
+                        <!-- End Right Column-->
+                    </div>
+                <!--End Tab One-->
+                </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-primary shadowFoot mt-auto p-10">
+        <nav aria-label="no clue yet, hi if you're reading" class="mx-auto">
+            <h6 class="footer-title">idk yet</h6>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+        </nav>
+        <nav aria-label="Programmer's Stuff" class="mx-auto">
+            <h6 class="footer-title" aria-label="Links to the programmer's profiles and other information">Programmer's
+                Stuff</h6>
+            <a class="link link-hover" href="https://www.linkedin.com/in/caitlin-ridge-sykes/" target="_blank"><i
+                    class="footIcon bi bi-linkedin" aria-hidden="true"></i>LinkedIn</a>
+
+            <a class="link link-hover" href="https://github.com/Caitlin-Sykes" target="_blank"><i
+                    class="footIcon bi bi-github" aria-hidden="true"></i>Github</a>
+
+            <a class="link link-hover" href="tech.html"><i class="footIcon bi bi-laptop"></i>Technology Used</a>
+            <a class="link link-hover"><i class="footIcon bi bi-arrow-through-heart"></i>Thanks to</a>
+        </nav>
+    </footer>
+    <!-- End of Footer -->
+</body>
+
+</html>
