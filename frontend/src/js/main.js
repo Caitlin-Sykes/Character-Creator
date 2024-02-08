@@ -4,6 +4,7 @@ let WebSocket = require('ws')
 let client; //defines websocket
 let python;
 const path = require('path');
+let win;
 
 
 // Creates electron window
@@ -28,30 +29,8 @@ function createWindow() {
 function establishWebSocketConnection() {
     //Inits websocket if it doesn't exist
     if (!client || client.readyState !== WebSocket.OPEN) {
-        createPythonServer()
-        client = new WebSocket("ws://localhost:3000");
-       
-
-        client.on('open', () => {
-            console.log('WebSocket connection established.');
-            // Optionally, you can send initial data or perform other actions here
-        });
+        createPythonServer();
     }
-
-    client.on('message', (message) => {
-        console.log('Received message:', message);
-        // Handle incoming messages from the WebSocket server
-    });
-
-    client.on('error', (error) => {
-        console.error('WebSocket connection error:', error);
-        // Retry establishing the connection after a delay
-        setTimeout(establishWebSocketConnection, 10000);
-    });
-
-    //links to frontend page
-    win.loadFile('frontend/index.html')
-
 }
 
 //Detects keyboard interrupts
@@ -71,11 +50,36 @@ function createPythonServer() {
     console.log("Starting the python websocket...")
     // Creates python process
     let python = require('child_process').spawn('python', ['./backend/main.py']);
+    python.stdout.setEncoding("utf-8");
     python.stdout.on('data', function (data) {
-        console.log("data: ", data.toString('utf8'));
+        console.log("python-stdout: ", data);
+        if (data.startsWith("RUNNING ON PORT:")) {
+            let port= data.substring(16);
+            client = new WebSocket(`ws://localhost:${port}`);
+
+
+            client.on('open', () => {
+                console.log('WebSocket connection established.');
+                // Optionally, you can send initial data or perform other actions here
+            });
+            client.on('message', (message) => {
+                console.log('Received message:', message);
+                // Handle incoming messages from the WebSocket server
+            });
+
+            client.on('error', (error) => {
+                console.error('WebSocket connection error:', error);
+                // Retry establishing the connection after a delay
+                setTimeout(establishWebSocketConnection, 10000);
+            });
+
+            //links to frontend page
+            win.loadFile('frontend/index.html')
+        }
     });
     python.stderr.on('data', (data) => {
-        console.log(`stderr: ${data}`); // when error
+        console.log(`python-stderr: ${data}`); // when error
+        python.kill();
     });
 }  
 
@@ -115,24 +119,23 @@ app.whenReady().then(() => {
         app.quit()
     });
 
-// Runs flask server as a background process, hides it
-backend = path.join(process.cwd(), 'dist/main.exe')
-let execfile = require("child_process").execFile;
-execfile(
-    backend,
-    {
-        windowsHide: true, //change to true
-    },
-    (err, stdout, stderr) => {
-        if (err) {
-            console.log(err);
-        }
-        if (stdout) {
-            console.log(stdout);
-        }
-        if (stderr) {
-            console.log(stderr);
-        }
-    }
-)
+// Runs flask server as a background process, hides it // DEPRECATED
+// let backend = path.join(process.cwd(), 'dist/main.exe')
+// require("child_process").execFile(
+//     backend,
+//     {
+//         windowsHide: true, //change to true
+//     },
+//     (err, stdout, stderr) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         if (stdout) {
+//             console.log(stdout);
+//         }
+//         if (stderr) {
+//             console.log(stderr);
+//         }
+//     }
+// )
 })
