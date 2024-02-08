@@ -49,7 +49,7 @@ setInterval(heartbeat, 300000)
 function createPythonServer() {
     console.log("Starting the python websocket...")
     // Creates python process
-    let python = require('child_process').spawn('python', ['./backend/main.py']);
+    let python = require('child_process').spawn('python', ['./backend/main.py'], {detached: false});
     python.stdout.setEncoding("utf-8");
     python.stdout.on('data', function (data) {
         console.log("python-stdout: ", data);
@@ -79,9 +79,15 @@ function createPythonServer() {
     });
     python.stderr.on('data', (data) => {
         console.log(`python-stderr: ${data}`); // when error
-        python.kill();
+        // python.kill();
     });
-}  
+    python.on("error", console.error)
+    python.on("exit", console.log)
+    python.on("message", console.log)
+    python.on("close", console.log)
+    python.on("spawn", console.log)
+    python.on("disconnect", console.log)
+}
 
 
 //A function to open the websocket & ping it
@@ -101,7 +107,7 @@ function heartbeat() {
 // Function to send a "kill" message to the server
 function killFlask() {
     console.log("Sending command to kill flask...")
-    client.send('kill');
+    // client.send('kill');
 }
 
 // Event listener when Electron app is ready
