@@ -18,15 +18,11 @@ Nothing because I haven't built it yet
     - Cait's JS Skills 
     - Cait's decent JSON-writing skills 
     - Cait's hours of playing Baldur's Gate 3 
-    - Some of Adam's Lack of JS skills
+    - Some of Adam's of JS skills
  
 # To run: 
-    - In the "Backend" folder, run `pip install -r requirements.txt` 
-    - In the root directory, run `npm install` 
-    - Run "npm run start" in the root directory 
+    - run npm run start
 
-# To make changes 
-    - run `npx tailwindcss -i ./frontend/src/css/input.css -o ./frontend/src/css/output.css --watch` to monitor changes to the css.
 # With thanks to: 
-    🔴 Adam, for helping explain JavaScript to me and debug my Tailwind. 🔴 
+    🔴 Adam, for helping explain JavaScript to me and debug my Tailwind and make improvements. 🔴 
     

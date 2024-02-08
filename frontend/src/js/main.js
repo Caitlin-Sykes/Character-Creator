@@ -118,24 +118,4 @@ app.whenReady().then(() => {
         client.close();
         app.quit()
     });
-
-// Runs flask server as a background process, hides it // DEPRECATED
-// let backend = path.join(process.cwd(), 'dist/main.exe')
-// require("child_process").execFile(
-//     backend,
-//     {
-//         windowsHide: true, //change to true
-//     },
-//     (err, stdout, stderr) => {
-//         if (err) {
-//             console.log(err);
-//         }
-//         if (stdout) {
-//             console.log(stdout);
-//         }
-//         if (stderr) {
-//             console.log(stderr);
-//         }
-//     }
-// )
 })

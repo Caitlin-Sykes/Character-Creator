@@ -44,18 +44,7 @@ function sendGame(event) {
     var selectedValue = selectedOption.value;
 
     //Sends a request to the backend
-    // this is ajax. idk if this is what i need. the abive works tho.
-    // $.ajax({
-    //     url: "{{url_for('view.path') }}",
-    //     type: 'POST',
-    //     data: {
-    //         name: selectedValue
-    //     },
-    //     success: function (response) {
-    //     },
-    //     error: function (response) {
-    //     }
-    // });
+   
 }
 
 //On the DOM load, runs the commands
