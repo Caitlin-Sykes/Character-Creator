@@ -1,10 +1,10 @@
 import random
 from flask import Flask, request #imports flask
 import generation as gen
-# import socketStuff as sckt
+import socketStuff as sckt
 
 main = Flask(__name__) #main flask instance
-# sckt.start_server()
+sckt.start_server()
 
 
 
@@ -35,17 +35,17 @@ def view():
             return "lol."
 
 
-# #A function to check the heartbeat, called by the JS
-# @main.route("/check_heartbeat", methods=['GET'])
-# def check_heartbeat():
+#A function to check the heartbeat, called by the JS
+@main.route("/check_heartbeat", methods=['GET'])
+def check_heartbeat():
     
-#     if sckt.heartbeat:
-#         #Stops the timer
-#         sckt.heartbeat.cancel() 
+    if sckt.heartbeat:
+        #Stops the timer
+        sckt.heartbeat.cancel()
     
-#     #Restarts the timer
-#     sckt.restart_heartbeat()
-#     return "Still alive."
+    #Restarts the timer
+    sckt.restart_heartbeat()
+    return "Still alive."
   
 
 #Run flask    
