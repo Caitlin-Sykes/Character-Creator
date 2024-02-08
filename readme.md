@@ -21,7 +21,8 @@ Nothing because I haven't built it yet
     - Some of Adam's of JS skills
  
 # To run: 
-    - run npm run start
+    - run npm run start, any neccessary packages will build automatically.
+    - to make changes to the js, run "npm run watch" which will monitor the tailwind.
 
 # With thanks to: 
     🔴 Adam, for helping explain JavaScript to me and debug my Tailwind and make improvements. 🔴 

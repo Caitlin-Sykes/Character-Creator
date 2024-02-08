@@ -133,4 +133,4 @@ dist
 .vscode
 
 # Output.css
-/frontend/src/css/output.cs
+frontend/src/css/output.css
