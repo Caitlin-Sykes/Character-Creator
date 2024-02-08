@@ -1,11 +1,11 @@
 import random
+import threading
 from flask import Flask, request #imports flask
 import generation as gen
 import socketStuff as sckt
 
 # TODO: these will not run concurrent, i need to multithread.
 main = Flask(__name__) #main flask instance
-sckt.start_server()
 
 
 
@@ -47,11 +47,24 @@ def check_heartbeat():
     #Restarts the timer
     sckt.restart_heartbeat()
     return "Still alive."
-  
+ 
+def start_flask():
+    port = random.randrange(49152, 65535)
+    print(f"RUNNING ON PORT:{port}")
+    main.run(debug=True, port=port)
+
+
 
 #Run flask    
 if __name__ == '__main__':
-    port = random.randrange(49152, 65535)
-    print(f"Running flask on port {port}")
-    main.run(debug=True, port=port)
+    flaskT = threading.Thread(start_flask()) #starts flask thread
+    websocketT = threading.Thread(sckt.start_server()) #starts websocket thread
+    
+    #My understanding is that setting these as daemon mean that these threads die when the main program dies
+    # tho i am speedrunning this and will look again when I HAVE A CHARGING BRICK YOU SPOON CAIT.
+    flaskT.daemon = True
+    websocketT.daemon = True
+    #Starts threads
+    flaskT.start()
+    websocketT.start()
 
