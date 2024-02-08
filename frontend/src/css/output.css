@@ -10012,6 +10012,10 @@ details.collapse summary::-webkit-details-marker {
   forced-color-adjust: none;
 }
 
+body[adam="🔴"] {
+  color: red !important;
+}
+
 /* ---------------------------------------------------------------- */
 
 /*                             Fonts                                */
