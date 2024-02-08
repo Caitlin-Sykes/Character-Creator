@@ -3,6 +3,7 @@ from flask import Flask, request #imports flask
 import generation as gen
 import socketStuff as sckt
 
+# TODO: these will not run concurrent, i need to multithread.
 main = Flask(__name__) #main flask instance
 sckt.start_server()
 

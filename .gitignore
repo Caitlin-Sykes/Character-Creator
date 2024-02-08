@@ -131,3 +131,6 @@ dist
 
 # VS Code Options
 .vscode
+
+# Output.css
+/frontend/src/css/output.cs
